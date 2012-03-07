@@ -1,16 +1,15 @@
 package org.springframework.data.jpa.showcase.snippets;
 
-import java.util.Date;
+import org.joda.time.LocalDate;
+import org.springframework.data.jpa.showcase.core.Account;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
-
-import org.joda.time.LocalDate;
-import org.springframework.data.jpa.showcase.core.Account;
-import org.springframework.stereotype.Repository;
+import java.util.Date;
 
 
 /**

@@ -1,11 +1,5 @@
 package org.springframework.data.jpa.example.repository;
 
-import static org.junit.Assert.*;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,10 +7,16 @@ import org.springframework.data.jpa.example.domain.User;
 import org.springframework.data.jpa.repository.support.SimpleJpaRepository;
 import org.springframework.data.repository.CrudRepository;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+import static org.junit.Assert.assertEquals;
+
 
 /**
  * This unit tests shows plain usage of {@link SimpleJpaRepository}.
- * 
+ *
  * @author Oliver Gierke
  */
 public class BasicSample {
@@ -32,7 +32,7 @@ public class BasicSample {
     public void setUp() {
 
         EntityManagerFactory factory =
-            Persistence.createEntityManagerFactory("jpa.sample.plain");
+                Persistence.createEntityManagerFactory("jpa.sample.plain");
         em = factory.createEntityManager();
 
         userRepository = new SimpleJpaRepository<User, Long>(User.class, em);

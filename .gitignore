@@ -1,5 +1,13 @@
-.project
 .classpath
+.DS_Store
+.idea
+*.iml
+*.ipr
+*.iws
+*.log
+.project
+.settings
 .springBeans
-.settings/
-target/
+surefire*
+*.swp
+target

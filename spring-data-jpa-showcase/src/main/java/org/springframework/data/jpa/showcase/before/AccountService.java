@@ -1,9 +1,9 @@
 package org.springframework.data.jpa.showcase.before;
 
-import java.util.List;
-
 import org.springframework.data.jpa.showcase.core.Account;
 import org.springframework.data.jpa.showcase.core.Customer;
+
+import java.util.List;
 
 
 /**
@@ -16,8 +16,8 @@ public interface AccountService {
     /**
      * Saves the given {@link Account}.
      * 
-     * @param account
-     * @return
+     * @param account Account
+     * @return Account
      */
     Account save(Account account);
 
@@ -25,8 +25,8 @@ public interface AccountService {
     /**
      * Returns all {@link Account}s of the given {@link Customer}.
      * 
-     * @param customer
-     * @return
+     * @param customer Customer
+     * @return Account List
      */
     List<Account> findByCustomer(Customer customer);
 }

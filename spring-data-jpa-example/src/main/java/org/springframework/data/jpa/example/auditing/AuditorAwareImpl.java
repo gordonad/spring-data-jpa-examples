@@ -8,7 +8,7 @@ import org.springframework.data.domain.AuditorAware;
  * {@link AuditableUser} as auditor on every call to
  * {@link #getCurrentAuditor()}. Normally you would access the applications
  * security subsystem to return the current user.
- * 
+ *
  * @author Oliver Gierke
  */
 public class AuditorAwareImpl implements AuditorAware<AuditableUser> {

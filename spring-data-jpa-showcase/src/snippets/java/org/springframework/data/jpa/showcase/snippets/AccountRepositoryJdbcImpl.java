@@ -10,19 +10,19 @@ import org.springframework.stereotype.Repository;
 @Repository
 class AccountRepositoryJdbcImpl implements AccountRepositoryCustom {
 
-	private JdbcTemplate template;
+    private JdbcTemplate template;
 
-	public void setTemplate(JdbcTemplate template) {
-		this.template = template;
-	}
+    public void setTemplate(JdbcTemplate template) {
+        this.template = template;
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * @see org.springframework.data.jpa.showcase.snippets.AccountRepositoryCustom#removedExpiredAccounts(org.joda.time.LocalDate)
-	 */
-	@Override
-	public void removedExpiredAccounts(LocalDate reference) {
+    /*
+      * (non-Javadoc)
+      * @see org.springframework.data.jpa.showcase.snippets.AccountRepositoryCustom#removedExpiredAccounts(org.joda.time.LocalDate)
+      */
+    @Override
+    public void removedExpiredAccounts(LocalDate reference) {
 
-		template.update("DELETE Account AS a WHERE a.expiryDate < ?", reference.toDateMidnight().toDate());
-	}
+        template.update("DELETE Account AS a WHERE a.expiryDate < ?", reference.toDateMidnight().toDate());
+    }
 }

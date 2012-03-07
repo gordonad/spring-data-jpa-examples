@@ -1,11 +1,5 @@
 package org.springframework.data.jpa.example.repository;
 
-import static org.junit.Assert.*;
-
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,16 +7,21 @@ import org.springframework.data.jpa.example.domain.User;
 import org.springframework.data.jpa.example.repository.simple.SimpleUserRepository;
 import org.springframework.data.jpa.repository.support.JpaRepositoryFactory;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
+import static org.junit.Assert.assertEquals;
+
+//No reference to org.synyx.hades.dao.orm.GenericDaoFactory
 /**
- * Test case showing how to use the basic {@link GenericDaoFactory}
- * 
+ * Test case showing how to use the basic GenericDaoFactory
+ *
  * @author Oliver Gierke
  */
 public class BasicFactorySetup {
-
     private static final EntityManagerFactory factory =
-        Persistence.createEntityManagerFactory("jpa.sample.plain");
+            Persistence.createEntityManagerFactory("jpa.sample.plain");
 
     private SimpleUserRepository userRepository;
     private EntityManager em;
@@ -32,12 +31,11 @@ public class BasicFactorySetup {
 
     /**
      * Creates a {@link SimpleUserRepository} instance.
-     * 
+     *
      * @throws Exception
      */
     @Before
     public void setUp() {
-
         em = factory.createEntityManager();
 
         userRepository = new JpaRepositoryFactory(em).getRepository(SimpleUserRepository.class);
@@ -50,7 +48,6 @@ public class BasicFactorySetup {
         user.setLastname("lastname");
 
         user = userRepository.save(user);
-
     }
 
 
@@ -59,7 +56,6 @@ public class BasicFactorySetup {
      */
     @After
     public void tearDown() {
-
         em.getTransaction().rollback();
     }
 
@@ -69,7 +65,6 @@ public class BasicFactorySetup {
      */
     @Test
     public void executingFinders() {
-
         assertEquals(user, userRepository.findByTheUsersName("username"));
         assertEquals(user, userRepository.findByLastname("lastname").get(0));
         assertEquals(user, userRepository.findByFirstname("firstname").get(0));

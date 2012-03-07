@@ -1,19 +1,18 @@
 package org.springframework.data.jpa.showcase.before;
 
-import java.util.List;
-
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.TypedQuery;
-
 import org.springframework.data.jpa.showcase.core.Customer;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.TypedQuery;
+import java.util.List;
+
 
 /**
  * Plain JPA implementation of {@link CustomerService}.
- * 
+ *
  * @author Oliver Gierke
  */
 @Repository

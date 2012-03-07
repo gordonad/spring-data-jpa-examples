@@ -1,15 +1,15 @@
 package org.springframework.data.jpa.example.domain;
 
+import org.springframework.data.jpa.domain.AbstractPersistable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.NamedQuery;
 
-import org.springframework.data.jpa.domain.AbstractPersistable;
-
 
 /**
  * Sample user class.
- * 
+ *
  * @author Oliver Gierke
  */
 @Entity
@@ -42,8 +42,8 @@ public class User extends AbstractPersistable<Long> {
 
     /**
      * Returns the username.
-     * 
-     * @return
+     *
+     * @return username
      */
     public String getUsername() {
 

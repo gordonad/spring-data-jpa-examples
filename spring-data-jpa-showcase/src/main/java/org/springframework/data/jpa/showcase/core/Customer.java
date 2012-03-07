@@ -21,19 +21,16 @@ public class Customer {
 
 
     public Long getId() {
-
         return id;
     }
 
 
     public String getFirstname() {
-
         return firstname;
     }
 
 
     public String getLastname() {
-
         return lastname;
     }
 }
